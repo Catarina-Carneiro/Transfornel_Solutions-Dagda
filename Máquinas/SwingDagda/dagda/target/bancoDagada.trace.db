@@ -1,0 +1,21 @@
+2020-10-25 12:48:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" not found; SQL statement:
+select * from USUARIO where email = ? and senha = ? [42102-200]
+2020-10-25 12:48:57 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" not found; SQL statement:
+select * from USUARIO where email = ? and senha = ? [42102-200]
+2020-10-25 12:48:58 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" not found; SQL statement:
+select * from USUARIO where email = ? and senha = ? [42102-200]
+2020-10-25 12:48:58 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" not found; SQL statement:
+select * from USUARIO where email = ? and senha = ? [42102-200]
+2020-10-25 12:48:59 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" not found; SQL statement:
+select * from USUARIO where email = ? and senha = ? [42102-200]
+2020-10-25 12:48:59 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" not found; SQL statement:
+select * from USUARIO where email = ? and senha = ? [42102-200]
+2020-10-25 12:48:59 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" not found; SQL statement:
+select * from USUARIO where email = ? and senha = ? [42102-200]

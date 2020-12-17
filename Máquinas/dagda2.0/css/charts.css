@@ -1,0 +1,14 @@
+.charts{
+  display: flex !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+}
+
+.configChart{
+  margin: 20px auto; 
+}
+.main-panel > .buttonContainer{
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+}

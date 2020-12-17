@@ -1,0 +1,18 @@
+.groupNotification{
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+.notification{
+    background-color: #fed136;
+    width: 300px;
+    height: auto;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0px 0px 40px 5px black;
+    text-align: center;
+    font-size: 18px;
+    transition: all 1s;
+    z-index: 999;
+}

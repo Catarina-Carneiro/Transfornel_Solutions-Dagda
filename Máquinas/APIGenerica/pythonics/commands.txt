@@ -1,0 +1,131 @@
+#Comandos MySQL
+
+create database dagda;
+
+use dagda;
+CREATE TABLE EMPRESA(
+	idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(45),
+    rua  VARCHAR(40),
+    numero VARCHAR(5),
+    bairro VARCHAR(50),
+    cidade VARCHAR(20),
+    estado char(2),
+    cnpj CHAR(14),
+    cep CHAR(7),
+    pais varchar(30),
+    telefone CHAR(10),
+    representante VARCHAR(100)
+);
+
+CREATE TABLE USUARIO(
+	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    email VARCHAR(30),
+    senha VARCHAR(45),
+    fkEmpresa INT,
+    FOREIGN KEY (fkEmpresa) references Empresa(idEmpresa)
+);
+
+CREATE TABLE MAQUINA(
+	idMaquina INT PRIMARY KEY auto_increment,
+    nome VARCHAR(35),
+    fkEmpresa INT,
+    FOREIGN KEY (fkEmpresa) references Empresa(idEmpresa)
+);
+
+CREATE TABLE Componente(
+	idComponente INT PRIMARY KEY AUTO_INCREMENT,
+    tipoComponente VARCHAR(20),
+    metrica VARCHAR(4)
+);
+
+create table MaqComp(
+	idMaqComp INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(45),
+    alerta VARCHAR(6),
+    fkMaquina INT,
+    fkComponente INT,
+    FOREIGN KEY(fkMaquina) REFERENCES Maquina(idMaquina),
+    FOREIGN KEY(fkComponente) REFERENCES Componente(idComponente)
+);
+create table Leituras(
+	idLeitura INT PRIMARY KEY AUTO_INCREMENT,
+    leitura varchar(8),
+    horaDeLeitura datetime,
+    fkMaqComp int,
+    foreign key(fkMaqComp) references MaqComp(idMaqComp)
+);
+
+insert para testes
+insert into empresa values(default,'Empresa tal','Av. raimundo pereira de magalhães','2500','Vila santa cruz','São Paulo','SP','14524587451645','Brasil','0522015','40028922','Carlos almeida'),
+						  (default,'Empresa Dois','Av. Jardins','150','Paulista','São Paulo','SP','14251458745815','Brasil','0522164','1139468250','Jonatan');
+
+-- desc usuario;
+
+insert into usuario values(default,'Bruce Wayne','admin@teste.com',md5('123'),1),
+						  (default,'Jonatan','batman@bandtec.com.br',md5('123'),1),
+                          (default,'dagda','dagda@bandtec.com,br',md5('123'),2);
+
+-- desc maquina;
+
+
+
+insert into maquina values(default,'M1E1',1),
+						  (default,'M2E1',1),
+                          (default,'M1E2',2),
+                          (default,'M2E2',2),
+                          (default,'M32',2),
+                          (default,'HSL089',1);
+
+
+insert into componente values(default,'cpu','%'),
+							 (default,'ram','%'),
+                             (default,'disco','%'),
+                             (default,'temperature','ºC'),
+                             (default,'clocks','Mhz');
+
+
+
+-- nesse insert voce colocar os componentes que vc deseja monitorar na sua maquina 
+-- o default é o id com auto_increment
+-- o segundo paramentro é o nome, ele pode ser vazio dependendo do que você deseja
+-- o terceiro paramentro é o alerta desejado
+-- o quarto paramentro é o código da sua maquina no banco(nesse exemplo esta sendo monitorado a maquina M1E1 da tabela maquinas)
+-- e por ultimo e mais importante, o id do componente, que na verdade é o id do tipo da leitura
+insert into MaqComp values(default, 'Intel Core I7 7650U', '50', 1, 1),
+						   (default, 'HyperX Fury','70',1,2),
+                           (default, 'SSD Kingston a2000','50',1,3),
+
+
+#Python
+
+#Criar ambiente virtual
+
+python3 -m venv NOMEdoAMBIENTE #(no meu caso windowsenv)
+
+após criar o ambiente virtual, adicione o nome dele ao .gitignore para ele não subir para o repositório
+
+#entrar no Ambiente virtual
+supondo que o ambiente se chame env
+
+# Opa parece que precisa habilitar os scripts em windows para rodar
+- PowerShell
+HABILITANDO EXECUÇÃO DE SCRIPTS: Set-ExecutionPolicy Unrestricted depois S e enter.
+
+windowsenv/Scripts/activate.ps1
+
+-CMD
+
+env/Scripts/activate.bat
+
+-BASH
+
+source env/Scripts/activate
+
+
+#EXECUTAR O CODIGO
+python /main.py
+#veja os comandos
+
+# para interromper a captura dados CRTL + C

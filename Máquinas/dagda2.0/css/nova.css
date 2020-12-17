@@ -1,0 +1,47 @@
+.esc
+{
+  
+  width: 80%;
+  font-size: 100px;
+  margin: auto;
+  margin-top: 20%;
+}
+
+#esc svg
+{
+    margin-left: 25%;
+    color: black;
+    
+} 
+
+.text i
+{
+    font-size: 20%;
+    margin-left: 21%;
+   
+}
+
+#esc svg:hover
+{
+    opacity: 0.8;
+}
+
+.dropdown-menu a 
+{
+    font-size: 80%;
+}
+
+.btn-secondary:hover {
+    
+    background-color:#fed136;
+    border-color:#fed136;
+}
+.main-panel > .buttonContainer{
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.main-panel.btn-primary{
+  margin: 0 auto;
+}
